@@ -34,77 +34,83 @@ func main() {
 	var answer int
 	var command string
 
-	var a int = nums(10)
-	var b int = nums(10)
+	var i int
 
-	fmt.Println("Pick [A, S, M, D]")
+	for i < 1 {
+		var a int = nums(10)
+		var b int = nums(10)
 
-	fmt.Scanln(&command)
+		fmt.Println("Pick [A, S, M, D]")
 
-	if isEmpty(command) {
-		fmt.Println("Empty..")
-	}
+		fmt.Scanln(&command)
 
-	if command == "A" {
-		fmt.Println("What is:", a, "+", b)
+		i += 1
 
-		fmt.Println("Enter Answer")
-
-		fmt.Scan(&answer)
-
-		if isEmpty(answer) {
+		if isEmpty(command) {
 			fmt.Println("Empty..")
 		}
 
-		if answer == add(a, b) {
-			fmt.Println("Correct", a, "+", b, "=", add(a, b))
+		if command == "A" {
+			fmt.Println("What is:", a, "+", b)
+
+			fmt.Println("Enter Answer")
+
+			fmt.Scan(&answer)
+
+			if isEmpty(answer) {
+				fmt.Println("Empty..")
+			}
+
+			if answer == add(a, b) {
+				fmt.Println("Correct", a, "+", b, "=", add(a, b))
+			}
 		}
+
+		if command == "S" {
+			fmt.Println("What is:", a, "-", b)
+
+			fmt.Println("Enter Answer")
+
+			fmt.Scan(&answer)
+
+			if isEmpty(answer) {
+				fmt.Println("Empty..")
+			}
+
+			if answer == sub(a, b) {
+				fmt.Println("Correct", a, "-", b, "=", sub(a, b))
+			}
+		}
+
+		if command == "M" {
+			fmt.Println("What is:", a, "*", b)
+
+			fmt.Println("Enter Answer")
+
+			if isEmpty(answer) {
+				fmt.Println("Empty..")
+			}
+
+			fmt.Scan(&answer)
+			if answer == mul(a, b) {
+				fmt.Println("Correct", a, "*", b, "=", mul(a, b))
+			}
+		}
+
+		if command == "D" {
+			fmt.Println("What is:", b, "/", a)
+
+			fmt.Println("Enter Answer")
+
+			if isEmpty(answer) {
+				fmt.Println("Empty..")
+			}
+
+			fmt.Scan(&answer)
+			if answer == div(b, a) {
+				fmt.Println("Correct", b, "/", a, "=", div(b, a))
+			}
+		}
+
 	}
-
-	if command == "S" {
-		fmt.Println("What is:", a, "-", b)
-
-		fmt.Println("Enter Answer")
-
-		fmt.Scan(&answer)
-
-		if isEmpty(answer) {
-			fmt.Println("Empty..")
-		}
-
-		if answer == sub(a, b) {
-			fmt.Println("Correct", a, "-", b, "=", sub(a, b))
-		}
-	}
-
-	if command == "M" {
-		fmt.Println("What is:", a, "*", b)
-
-		fmt.Println("Enter Answer")
-
-		if isEmpty(answer) {
-			fmt.Println("Empty..")
-		}
-
-		fmt.Scan(&answer)
-		if answer == mul(a, b) {
-			fmt.Println("Correct", a, "*", b, "=", mul(a, b))
-		}
-	}
-
-	if command == "D" {
-		fmt.Println("What is:", b, "/", a)
-
-		fmt.Println("Enter Answer")
-
-		if isEmpty(answer) {
-			fmt.Println("Empty..")
-		}
-
-		fmt.Scan(&answer)
-		if answer == div(b, a) {
-			fmt.Println("Correct", b, "/", a, "=", div(b, a))
-		}
-	}
-
 }
